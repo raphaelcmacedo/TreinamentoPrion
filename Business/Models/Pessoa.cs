@@ -1,14 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Business.Models
 {
-    public class Pessoa:IComparable<Pessoa>
+    public class Pessoa:GenericModel,IComparable<Pessoa>
     {
-        public long IdPessoa { get; set; }
+        [Key]
+        public long PessoaId { get; set; }
+
         public String Name { get; set; }
         public String CPF { get; set; }
 
