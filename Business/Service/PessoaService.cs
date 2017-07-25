@@ -17,8 +17,8 @@ namespace Business.Service
 
         public Pessoa Find(string name)
         {
-            //O PROBLEMA ESTÁ AQUI
-            base.dao.Fin
+            PessoaDAO pessoaDao = (PessoaDAO)dao;
+            return pessoaDao.FindByName(name);
         }
     }
 }
